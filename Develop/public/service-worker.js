@@ -5,7 +5,7 @@ const FILES_TO_CACHE = [
   "./css/styles.css",
 ];
 
-const APP_PREFIX = "Budget";
+const APP_PREFIX = "Expenses";
 const VERSION = "v_01";
 const CACHE_NAME = APP_PREFIX + VERSION;
 
@@ -64,7 +64,7 @@ self.addEventListener("fetch", function (event) {
         return request || fetch(event.request);
       })
       // if above fails, returns with index.html from cache
-      .catch(function (err) {
+      .catch(function () {
         return caches.match("index.html");
       })
   );
